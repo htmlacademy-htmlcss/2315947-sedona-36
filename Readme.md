@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Павел Докучаев](https://up.htmlacademy.ru/htmlcss/36/user/2315947).
-* Наставник: `Неизвестно`.
+* Наставник: [Виктор Рыбаков] (https://htmlacademy.ru/profile/viktor-rybakov).
 
 ---
 
