@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
+ <head>
   <meta charset="UTF-8">
-  <title>Каталог</title>
-</head>
+   <title>Каталог</title>
+   <link rel="stylesheet" href="styles/styles.css">
+ </head>
   <body>
     <header class="page-header">
       <div class="logo">
-        <img src="images/logo.svg" alt="Логотип Sedona">
+        <img class="logo-sedona" src="images/logo.svg" width="140" height="70" alt="Логотип Sedona">
       </div>
       <nav class="navigation">
         <ul class="navigation-list">
@@ -18,7 +19,7 @@
             <a class="navigation-link" href="#">О Седоне</a>
           </li>
           <li class="navigation-item">
-            <a class="navigation-link" href="#">Гостиницы</a>
+            <a class="navigation-link" href="catalog.html">Гостиницы</a>
           </li>
         </ul>
         <ul class="navigation-list navigation-user">
@@ -46,23 +47,25 @@
         </ul>
       </nav>
     </header>
-      <main class="main-inner">
+      <main class="main-container">
+        <div class="page-container">
         <header class="inner-header">
           <h1 class="inner-header-title">Гостиницы Седоны</h1>
-           <ul class="breadcrubs-list">
+           <ol class="breadcrubs-list">
              <li class="breadcrubs-item">
-               <a class="breadcrubs-home" href="index.html">
+               <a class="breadcrubs-link" href="index.html">
                 <span class="visually-hidden">Домой</span>
                </a>
              </li>
              <li class="breadcrubs-items">
-                <a class="breadcrubs-hostel">Гостиницы</a>
+                <a class="breadcrubs-hotels">Гостиницы</a>
              </li>
-           </ul>
+           </ol>
         </header>
-        <section class="catalog-products">
+        <section class="filters">
           <h2 class="visually-hidden">Фильтр для выбора гостиниц</h2>
-          <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
+          <form class="cotalog-filter" action="https://echo.htmlacademy.ru/" method="get">
+          <div class="catalog-columns">
             <fieldset class="catalog-filter-group">
               <legend class="catalog-filter-title">Инфраструктура</legend>
               <ul class="catalog-filter-list">
@@ -109,8 +112,8 @@
                   </li>
                 </ul>
             </fieldset>
-            <fieldset class="filter-price">
-              <legend class="filter-price-title">Стоимость, ₽:</legend>
+            <fieldset class="catalog-filter-price">
+              <legend class="catalog-filter-price-title">Стоимость, ₽:</legend>
                <div class="price-controls">
                  <label class="min-price">от <input type="text" name="min-price" value="0"></label>
                  <label class="max-price">до <input type="text" name="max-price" value="9000"></label>
@@ -118,27 +121,33 @@
                <div class="price-scale">
                 <input type="range" id="volume" name="prise" min="0" max="9000">
                </div>
+              </fieldset>
+
               <div class="button-catalog-filter">
                 <button class="button button-accept" type="submit">Применить</button>
                 <button class="button button-reset" type="reset">Сбросить</button>
               </div>
-            </fieldset>
+            </div>
           </form>
           </section>
-          <section class="sorting-item">
+          <section class="sorting-hotel">
+            <div class="sorting-container">
             <h2 class="hotels-found"> Найдено гостиниц: 38 </h2>
            <select class="select-control" aria-label="Сортировка">
             <option value="popular">Сначала популярное</option>
             <option value="cheap">Сначала дешёвое</option>
             <option value="expensive">Сначала дорогое</option>
            </select>
+           <!--CHECK-->
            <a href="" class="button button-light">
              <span class="visually-hidden">Показать список</span>
            </a>
            <a  class="button" href="">
             <span class="visually-hidden">Показать карточки</span>
            </a>
+           </div>
           </section>
+
 
 
           <h2 class="visually-hidden">Список гостиниц</h2>
@@ -160,8 +169,8 @@
                         </span>
                       </div>
                        <!-- ссылка на страницу подробнее -->
-                       <button class="accommodation__article__button site__btn" type="submit">Подробнее</button>
-                       <button class="accommodation__article__button site__btn">В избранное</button>
+                       <button class="accommodation__article__button site__button" type="submit">Подробнее</button>
+                       <button class="accommodation__article__button site__button">В избранное</button>
                       <div class="accommodation__article__stars">
                         <img src="images/blue-star.png" alt="star">
                         <img src="images/blue-star.png" alt="star">
@@ -194,7 +203,7 @@
                         </span>
                       </div>
                      <!-- ссылка на страницу подробнее -->
-                      <button class="accommodation__article__button site__btn" type="submit">Подробнее</button>
+                      <button class="accommodation__article__button site__button" type="submit">Подробнее</button>
                      <button class="accommodation__article__button site__button">В избранное</button>
                       <div class="accommodation__article__stars">
                         <img src="images/blue-star.png" alt="star">
@@ -228,7 +237,7 @@
                         </span>
                       </div>
                        <!-- ссылка на страницу подробнее -->
-                        <button class="accommodation__article__button site__btn" type="submit">Подробнее</button>
+                        <button class="accommodation__article__button site__button" type="submit">Подробнее</button>
                         <button class="accommodation__article__button site__button">В избранное</button>
                       <div class="accommodation__article__stars">
                         <img src="images/blue-star.png" alt="star">
@@ -274,14 +283,18 @@
             </div>
           </section>
 
+
+
         <section class="subscription">
+          <div class="subscription-block">
           <h2 class="subscription-title">Подпишись на рассылку</h2>
           <p class="subscription-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
-          <form class="subscription-email" action="https://echo.htmlacademy.ru/" method="post">
-           <label for="subscription-email">Email</label>
+          <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
+           <label class="visually-hidden" for="subscription-email">Email</label>
            <input class="field" plaseholder="Ваш e-mail" type="email" name="subscription-email" id="subscription-email">
            <button class="button subscription-button" type="submit">Подписаться</button>
           </form>
+        </div>
         </section>
       </main>
     <footer class="page-footer">
